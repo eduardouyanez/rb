@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilo inicial del header */
+header {
+  background-color: #1e3a8a;
+  transition: background-color 0.3s ease;
+}
+
+#menu {
+  background-color: #ffffff00;
+  transition: background-color 0.3s ease;
+}
+
+/* Cambiar el fondo a transparente */
+header.scrolled {
+  background-color: rgba(30, 58, 138, 0.8); /* Fondo transparente con opacidad */
+}
+
+/* Estilo del menú al hacer scroll */
+#menu.scrolled {
+  background-color: rgba(30, 59, 138, 0); /* Fondo transparente con opacidad */
+}
+
+/* Slider styles */
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: slideAnimation 30s infinite;
+}
+
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+  animation-delay: 10s;
+}
+
+.slide:nth-child(3) {
+  animation-delay: 20s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: parallaxAnimation 30s infinite;
+  transform-origin: center;
+}
+
+@keyframes slideAnimation {
+  0% { opacity: 0; transform: scale(1.1); }
+  10% { opacity: 1; transform: scale(1); }
+  30% { opacity: 1; transform: scale(1); }
+  40% { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.1); }
+}
+
+@keyframes parallaxAnimation {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5%); }
+  100% { transform: translateY(0); }
+}
+
+#top-right-menu {
+  background-color: #047857; /* Green-700 */
+  border-radius: 0 0 0 40px;
+  padding: 5px;
+  z-index: 60;
+  width: 24rem; /* 64px */
+  height: 2rem;
+  text-align: right;
+  transition: background-color 0.3s ease;
+}
+
+#top-right-menu.scrolled {
+  background-color: rgba(4, 120, 87, 0.8); /* Green-700 with opacity */
+}
+
+#top-right-menu ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#top-right-menu a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#top-right-menu a:hover {
+  color: #fbbf24; /* Yellow-500 */
+  transform: scale(1.1);
+}
+
+#menu a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#menu a:hover {
+  color: #fbbf24; /* Yellow-500 */
+  transform: scale(1.1);
+}

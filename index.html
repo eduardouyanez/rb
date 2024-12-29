@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colegio TISA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="font-sans bg-white text-gray-900">
+  <header id="header" class="sticky top-0 z-50 bg-blue-900 text-white shadow-md">
+    <!-- New Top Right Menu -->
+    <div id="top-right-menu" class="fixed top-0 right-0 z-60 bg-green-700 text-white rounded-bl-lg p-1 w-64">
+      <ul class="flex space-x-3 pr-4 relative">
+        <li class="relative">
+          <a href="#docentes" id="docentes-menu" class="text-sm hover:text-yellow-500 transition-all duration-200 cursor-pointer">Docentes</a>
+        </li>
+        <li><a href="#apoderados" class="text-sm hover:text-yellow-500 transition-all duration-200">Apoderados</a></li>
+        <li><a href="tel:+5695485637" class="hover:text-yellow-500 transition-all duration-200">
+          <i class="fas fa-phone"></i>
+        </a></li>
+        <li><a href="https://maps.google.com" target="_blank" class="hover:text-yellow-500 transition-all duration-200">
+          <i class="fas fa-map-marker-alt"></i>
+        </a></li>
+        <li><a href="https://youtube.com" target="_blank" class="hover:text-yellow-500 transition-all duration-200">
+          <i class="fab fa-youtube"></i>
+        </a></li>
+        <li><a href="https://instagram.com" target="_blank" class="hover:text-yellow-500 transition-all duration-200">
+          <i class="fab fa-instagram"></i>
+        </a></li>        
+        <li><a href="https://facebook.com" target="_blank" class="hover:text-yellow-500 transition-all duration-200">
+          <i class="fab fa-facebook-f"></i>
+        </a></li>
+      </ul>
+    </div>
+    <!-- Navbar -->
+    <nav class="container mx-auto flex items-center justify-between p-1 relative">
+      <!-- Logo y Nombre -->
+      <div class="flex items-center space-x-6 justify-start">
+        <div class="w-28">
+          <img src="img/logo.png" alt="Logo TISA" class="h-auto">
+        </div>
+        <div class="hidden md:block flex-grow">
+          <h1 class="text-xl md:text-2xl font-serif font-bold tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">
+            The International School Arica
+          </h1>
+        </div>
+      </div>
+      <!-- Botón toggle (hamburguesa) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <!-- Menú -->
+      <ul id="menu" class="hidden absolute top-full right-0 bg-blue-900 flex-col md:static md:flex md:flex-row md:space-x-8 md:ml-auto font-semibold tracking-wide md:items-center md:justify-end">
+        <li><a href="#inicio" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Inicio</a></li>
+        <li><a href="#nosotros" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Nosotros</a></li>
+        <li><a href="#programas" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Programas</a></li>
+        <li><a href="#admisión" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Admisión</a></li>
+        <li><a href="#contacto" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Contacto</a></li>
+      </ul>
+      
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección Hero -->
+    <section id="inicio" class="h-screen relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <div class="slider">
+            <div class="slide">
+              <video autoplay muted loop class="w-full h-full object-cover">
+                <source src="img/Cc-Video-Hero-v8.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="slide"><img src="img/image2.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="img/image3.jpg" alt="Slide 3"></div>
+          </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-900 to-gray-800 opacity-75 z-10"></div>
+        <div class="relative z-20 flex flex-col items-center justify-center text-center text-white h-full px-4">
+          <h1 class="text-4xl md:text-5xl font-serif font-bold">Bienvenidos a TISA</h1>
+          <p class="mt-4 text-lg font-light italic">"El derecho de las personas a participar con igualdad de oportunidades"</p>
+          <a href="#contacto" class="inline-block mt-6 bg-yellow-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-yellow-600 transition-all transform hover:scale-110">
+            Contáctanos
+          </a>
+        </div>
+      </section>      
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="py-20 bg-blue-900 text-center text-white">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-serif font-bold">¿Quiénes somos?</h2>
+        <p class="mt-6 max-w-prose mx-auto">
+          Somos un colegio que combina tradición y modernidad, ofreciendo una educación de calidad que fomenta valores, pensamiento crítico y una visión global.
+        </p>
+      </div>
+    </section>
+  
+    <!-- Sección Programas -->
+    <section id="programas" class="py-20 bg-gray-100 text-center">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-serif font-bold text-blue-900">Nuestros Programas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+          <div class="bg-white p-6 shadow-lg rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-blue-800">Programa Académico</h3>
+            <p class="mt-4 text-gray-600">
+              Formación de excelencia para el desarrollo académico y personal.
+            </p>
+          </div>
+          <div class="bg-white p-6 shadow-lg rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-blue-800">Programa Cultural</h3>
+            <p class="mt-4 text-gray-600">
+              Fomentamos la riqueza cultural con un enfoque global.
+            </p>
+          </div>
+          <div class="bg-white p-6 shadow-lg rounded-lg border border-gray-200">
+            <h3 class="text-xl font-semibold text-blue-800">Programa Tecnológico</h3>
+            <p class="mt-4 text-gray-600">
+              Integración de herramientas tecnológicas para el aprendizaje.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Admisión -->
+    <section id="admisión" class="py-20 bg-blue-900 text-center text-white">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-serif font-bold">Proceso de Admisión</h2>
+        <p class="mt-6 max-w-prose mx-auto">
+          Únete a nuestra comunidad y vive la experiencia de un aprendizaje transformador.
+        </p>
+        <a href="#contacto" class="inline-block mt-6 bg-yellow-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-yellow-600 transition-all">
+          Más información
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-blue-900 text-white text-center py-6">
+    <p>© 2024 The International School Arica - Todos los derechos reservados.</p>
+    <p class="text-sm italic mt-2">"El derecho de las personas a participar con igualdad de oportunidades"</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
