@@ -10,28 +10,28 @@
 
 /* Estilo inicial del header */
 header {
-  background-color: #1e3a8a;
+  background-color: transparent; /* Fondo completamente transparente */
   transition: background-color 0.3s ease;
 }
 
 #menu {
-  background-color: #ffffff00;
+  background-color: transparent; /* Fondo completamente transparente */
   transition: background-color 0.3s ease;
 }
 
-/* Cambiar el fondo a transparente */
+/* Cambiar el fondo a color sólido */
 header.scrolled {
-  background-color: rgba(30, 58, 138, 0.8); /* Fondo transparente con opacidad */
+  background-color: #1e3a8a;
 }
 
 /* Estilo del menú al hacer scroll */
 #menu.scrolled {
-  background-color: rgba(30, 59, 138, 0); /* Fondo transparente con opacidad */
+  background-color: #ffffff00;
 }
 
 /* Estilo del navbar al hacer scroll */
 #navbar.scrolled {
-  background-color: rgba(30, 58, 138, 0.8); /* Fondo transparente con opacidad */
+  background-color: #1e3a8a;
 }
 
 /* Slider styles */
@@ -88,7 +88,7 @@ header.scrolled {
 #top-right-menu {
   background-color: #047857; /* Green-700 */
   border-radius: 0 0 0 40px;
-  padding: 5px;
+  padding: 3px;
   z-index: 60;
   width: 24rem; /* 64px */
   height: 2rem;

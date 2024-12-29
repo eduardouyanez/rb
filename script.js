@@ -7,18 +7,18 @@ const headerHeight = header.offsetHeight;
 // Cambiar fondo del header y menú al hacer scroll
 window.addEventListener('scroll', () => {
   if (window.scrollY > headerHeight) {
-    header.classList.add('scrolled');
+    header.classList.add('shadow-md', 'scrolled'); // Add shadow-d when scrolled
     menu.classList.add('scrolled');
     topRightMenu.classList.add('scrolled');
     if (navbar) {
-      navbar.classList.add('scrolled');
+      navbar.classList.add('scrolled'); // Add shadow when scrolled
     }
   } else {
-    header.classList.remove('scrolled');
+    header.classList.remove('shadow-md', 'scrolled'); // Remove shadow-d when not scrolled
     menu.classList.remove('scrolled');
     topRightMenu.classList.remove('scrolled');
     if (navbar) {
-      navbar.classList.remove('scrolled');
+      navbar.classList.remove('scrolled'); // Remove shadow when not scrolled
     }
   }
 });
@@ -28,18 +28,4 @@ const menuToggle = document.getElementById('menu-toggle');
 
 menuToggle.addEventListener('click', () => {
   menu.classList.toggle('hidden');
-});
-
-// Mostrar opciones del menú Docentes al hacer click
-const docentesMenu = document.getElementById('docentes-menu');
-const docentesOptions = document.getElementById('docentes-options');
-
-// Ensure the options of the "Docentes" menu are hidden initially
-if (docentesOptions) {
-  docentesOptions.classList.add('hidden');
-}
-
-docentesMenu.addEventListener('click', (e) => {
-  e.preventDefault();
-  docentesOptions.classList.toggle('hidden');
 });
