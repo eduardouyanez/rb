@@ -29,6 +29,11 @@ header.scrolled {
   background-color: rgba(30, 59, 138, 0); /* Fondo transparente con opacidad */
 }
 
+/* Estilo del navbar al hacer scroll */
+#navbar.scrolled {
+  background-color: rgba(30, 58, 138, 0.8); /* Fondo transparente con opacidad */
+}
+
 /* Slider styles */
 .slider {
   position: absolute;

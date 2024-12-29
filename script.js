@@ -1,6 +1,7 @@
 const header = document.getElementById('header');
 const menu = document.getElementById('menu');
 const topRightMenu = document.getElementById('top-right-menu');
+const navbar = document.getElementById('navbar');
 const headerHeight = header.offsetHeight;
 
 // Cambiar fondo del header y menú al hacer scroll
@@ -9,10 +10,16 @@ window.addEventListener('scroll', () => {
     header.classList.add('scrolled');
     menu.classList.add('scrolled');
     topRightMenu.classList.add('scrolled');
+    if (navbar) {
+      navbar.classList.add('scrolled');
+    }
   } else {
     header.classList.remove('scrolled');
     menu.classList.remove('scrolled');
     topRightMenu.classList.remove('scrolled');
+    if (navbar) {
+      navbar.classList.remove('scrolled');
+    }
   }
 });
 
@@ -28,7 +35,9 @@ const docentesMenu = document.getElementById('docentes-menu');
 const docentesOptions = document.getElementById('docentes-options');
 
 // Ensure the options of the "Docentes" menu are hidden initially
-docentesOptions.classList.add('hidden');
+if (docentesOptions) {
+  docentesOptions.classList.add('hidden');
+}
 
 docentesMenu.addEventListener('click', (e) => {
   e.preventDefault();
