@@ -57,14 +57,21 @@
         </button>
       </div>
       <!-- Menú -->
-      <ul id="menu" class="hidden absolute top-full right-0 flex-col md:static md:flex md:flex-row md:space-x-8 md:ml-auto font-semibold tracking-wide md:items-center md:justify-end">
+      <ul id="menu" class="hidden flex-col md:static md:flex md:flex-row md:space-x-8 md:ml-auto font-semibold tracking-wide md:items-center md:justify-end">
+        <!-- Logo in the mobile menu -->
+        <div id="menu-logo" class="md:hidden">
+          <img src="img/logo.png" alt="Logo TISA">
+        </div>
         <li><a href="#inicio" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Home</a></li>
         <li><a href="#nosotros" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Staff</a></li>
         <li><a href="#programas" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Programas</a></li>
         <li><a href="#admisión" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">TISA News</a></li>
         <li><a href="#contacto" class="block px-4 py-2 hover:text-yellow-500 transition-all duration-200">Contacto</a></li>
+        <!-- Slogan in the mobile menu -->
+        <div id="menu-slogan" class="md:hidden">
+          <p>"El derecho de las personas a participar con igualdad de oportunidades"</p>
+        </div>
       </ul>
-      
     </nav>
   </header>
 
@@ -75,11 +82,21 @@
           <div class="slider">
             <div class="slide">
               <video autoplay muted loop class="w-full h-full object-cover">
-                <source src="img/Cc-Video-Hero-v8.mp4" type="video/mp4">
+                <source src="img/video_1.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="slide"><img src="img/image2.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="img/image2.jpg" alt="Slide 3"></div>
+            <div class="slide">
+              <video autoplay muted loop class="w-full h-full object-cover">
+                <source src="img/video_2.mp4" type="video/mp4">
+              </video>
+            </div>
             <div class="slide"><img src="img/image3.jpg" alt="Slide 3"></div>
+            <div class="slide">
+              <video autoplay muted loop class="w-full h-full object-cover">
+                <source src="img/video_3.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-blue-900 to-gray-800 opacity-75 z-10"></div>

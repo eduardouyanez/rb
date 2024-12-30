@@ -19,6 +19,72 @@ header {
   transition: background-color 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  #menu {
+    background: linear-gradient(to bottom, #1e3a8a, rgba(30, 58, 138, 0.8)); /* Darker at the top, more transparent at the bottom */
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Ensure no overflow */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+    transform: translateX(-100%); /* Initially hidden off-screen to the left */
+    position: fixed; /* Fixed position */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100%; /* Full height */
+    width: 250px; /* Fixed width */
+    z-index: 40; /* Ensure it is below the top-right menu */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the start */
+  }
+
+  #menu.show {
+    transform: translateX(0); /* Slide in from the left */
+  }
+
+  #menu a {
+    display: block; /* Ensure links are block elements */
+    padding: 15px 20px; /* Add padding for better touch targets */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+    color: white; /* White text color */
+    font-size: 1.1rem; /* Slightly larger text */
+  }
+
+  #menu a:last-child {
+    border-bottom: none; /* Remove border from last item */
+  }
+
+  #menu a:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+    color: #fbbf24; /* Yellow-500 */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+
+  #menu-toggle {
+    z-index: 100; /* Ensure the toggle button is above other elements */
+  }
+
+  #menu-logo {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 20px; /* Move the logo further down */
+  }
+
+  #menu-logo img {
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+  }
+
+  #menu-slogan {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Move the slogan to the bottom */
+    color: white; /* White text color */
+    font-size: 0.9rem; /* Slightly smaller text */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+  }
+}
+
 /* Cambiar el fondo a color sólido */
 header.scrolled {
   background-color: #1e3a8a;

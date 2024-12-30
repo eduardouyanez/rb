@@ -27,5 +27,6 @@ window.addEventListener('scroll', () => {
 const menuToggle = document.getElementById('menu-toggle');
 
 menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
+  menu.classList.toggle('hidden'); // Remove the "hidden" class to show the menu
+  menu.classList.toggle('show'); // Ensure the menu slides down from the top on toggle
 });
