@@ -20,7 +20,6 @@ window.addEventListener('scroll', () => {
 const menuToggle = document.getElementById('menu-toggle');
 
 menuToggle.addEventListener('click', () => {
-<<<<<<< HEAD
   menu.classList.toggle('hidden');
   menu.classList.toggle('show');
 });
@@ -39,8 +38,4 @@ document.addEventListener('click', (e) => {
   if (!docentesMenu.contains(e.target) && !docentesSubmenu.contains(e.target)) {
     docentesSubmenu.classList.add('hidden');
   }
-=======
-  menu.classList.toggle('hidden'); // Remove the "hidden" class to show the menu
-  menu.classList.toggle('show'); // Ensure the menu slides down from the top on toggle
->>>>>>> eb5bdbdbc746e4763eb95939bdc31a5cb2bc28f2
 });
