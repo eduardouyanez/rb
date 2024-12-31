@@ -9,14 +9,87 @@
 }
 
 /* Estilo inicial del header */
-header {
+header, #menu {
   background-color: transparent; /* Fondo completamente transparente */
   transition: background-color 0.3s ease;
 }
 
-#menu {
-  background-color: transparent; /* Fondo completamente transparente */
-  transition: background-color 0.3s ease;
+@media (max-width: 768px) {
+  #menu {
+    background: linear-gradient(to bottom, #1e3a8a, rgba(30, 58, 138, 0.8)); /* Darker at the top, more transparent at the bottom */
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Ensure no overflow */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+    transform: translateX(-100%); /* Initially hidden off-screen to the left */
+    position: fixed; /* Fixed position */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100%; /* Full height */
+    width: 250px; /* Fixed width */
+    z-index: 40; /* Ensure it is below the top-right menu */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the start */
+  }
+
+  #menu.show {
+    transform: translateX(0); /* Slide in from the left */
+  }
+
+  #menu a {
+    display: block; /* Ensure links are block elements */
+    padding: 15px 20px; /* Add padding for better touch targets */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+    color: white; /* White text color */
+    font-size: 1.1rem; /* Slightly larger text */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  #menu a:last-child {
+    border-bottom: none; /* Remove border from last item */
+  }
+
+  #menu a:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+    color: #fbbf24; /* Yellow-500 */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+
+  #menu-toggle {
+    z-index: 100; /* Ensure the toggle button is above other elements */
+    background-color: #2563eb; /* Blue background */
+    border: none; /* Remove default border */
+    border-radius: 50%; /* Make it circular */
+    padding: 10px; /* Add some padding */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  }
+
+  #menu-toggle:hover {
+    background-color: #1e40af; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+  }
+
+  #menu-logo {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 20px; /* Move the logo further down */
+  }
+
+  #menu-logo img {
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+  }
+
+  #menu-slogan {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Move the slogan to the bottom */
+    color: white; /* White text color */
+    font-size: 0.9rem; /* Slightly smaller text */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+    text-shadow: 2px 2px 4px rgba(30, 58, 138, 0.8); /* More pronounced dark blue shadow */
+  }
 }
 
 @media (max-width: 768px) {
@@ -86,18 +159,13 @@ header {
 }
 
 /* Cambiar el fondo a color sólido */
-header.scrolled {
+header.scrolled, #navbar.scrolled {
   background-color: #1e3a8a;
 }
 
 /* Estilo del menú al hacer scroll */
 #menu.scrolled {
   background-color: #ffffff00;
-}
-
-/* Estilo del navbar al hacer scroll */
-#navbar.scrolled {
-  background-color: #1e3a8a;
 }
 
 /* Slider styles */
@@ -138,17 +206,13 @@ header.scrolled {
 }
 
 @keyframes slideAnimation {
-  0% { opacity: 0; transform: scale(1.1); }
-  10% { opacity: 1; transform: scale(1); }
-  30% { opacity: 1; transform: scale(1); }
-  40% { opacity: 0; transform: scale(1.1); }
-  100% { opacity: 0; transform: scale(1.1); }
+   0%, 40%, 100% { opacity: 0; transform: scale(1.1); }
+  10%, 30% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes parallaxAnimation {
-  0% { transform: translateY(0); }
+  0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5%); }
-  100% { transform: translateY(0); }
 }
 
 #top-right-menu {
@@ -172,22 +236,60 @@ header.scrolled {
   gap: 10px;
 }
 
-#top-right-menu a {
+#top-right-menu a, #menu a {
   color: white;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-#top-right-menu a:hover {
+#top-right-menu a:hover, #menu a:hover {
   color: #fbbf24; /* Yellow-500 */
   transform: scale(1.1);
 }
 
-#menu a {
-  transition: color 0.3s ease, transform 0.3s ease;
+#docentes-submenu {
+  display: flex;
+  flex-direction: column; /* Asegura disposición vertical */
+  padding: 8px 0; /* Espaciado interno */
+  background-color: #047857; /* Fondo verde */
+  border-radius: 6px; /* Bordes redondeados */
+  visibility: hidden; /* Oculto inicialmente */
+  opacity: 0; /* Transparente inicialmente */
+  transform: translateY(-10px); /* Ligeramente desplazado hacia arriba */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 50; /* Asegura que esté por encima */
+  text-align: left; /* Alinea el texto a la izquierda */
 }
 
-#menu a:hover {
-  color: #fbbf24; /* Yellow-500 */
-  transform: scale(1.1);
+#docentes-submenu.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#docentes-submenu:not(.hidden) {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#docentes-submenu li {
+  display: block; /* Cada elemento ocupa una línea completa */
+  list-style: none; /* Elimina los puntos de lista */
+  margin: 0; /* Elimina márgenes extra */
+}
+
+#docentes-submenu a {
+  display: block; /* Hace que los enlaces llenen su contenedor */
+  padding: 10px 16px; /* Espaciado interno */
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Elimina subrayados */
+  background-color: transparent; /* Fondo transparente por defecto */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+}
+
+#docentes-submenu a:hover {
+  background-color: #065f46; /* Verde más oscuro al pasar el mouse */
+  color: #fbbf24; /* Texto amarillo */
 }
