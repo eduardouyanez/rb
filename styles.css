@@ -14,6 +14,14 @@ header, #menu {
   transition: background-color 0.3s ease;
 }
 
+header.scrolled, #navbar.scrolled {
+  background-color: #1e3a8a;
+}
+
+#menu.scrolled {
+  background-color: #ffffff00;
+}
+
 @media (max-width: 768px) {
   #menu {
     background: linear-gradient(to bottom, #1e3a8a, rgba(30, 58, 138, 0.8)); /* Darker at the top, more transparent at the bottom */
@@ -92,80 +100,154 @@ header, #menu {
   }
 }
 
-@media (max-width: 768px) {
-  #menu {
-    background: linear-gradient(to bottom, #1e3a8a, rgba(30, 58, 138, 0.8)); /* Darker at the top, more transparent at the bottom */
-    border-radius: 0 10px 10px 0; /* Rounded corners on the right */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    overflow: hidden; /* Ensure no overflow */
-    transition: transform 0.3s ease; /* Smooth transition for transform */
-    transform: translateX(-100%); /* Initially hidden off-screen to the left */
-    position: fixed; /* Fixed position */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    height: 100%; /* Full height */
-    width: 250px; /* Fixed width */
-    z-index: 40; /* Ensure it is below the top-right menu */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align items to the start */
-  }
-
-  #menu.show {
-    transform: translateX(0); /* Slide in from the left */
-  }
-
-  #menu a {
-    display: block; /* Ensure links are block elements */
-    padding: 15px 20px; /* Add padding for better touch targets */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
-    color: white; /* White text color */
-    font-size: 1.1rem; /* Slightly larger text */
-  }
-
-  #menu a:last-child {
-    border-bottom: none; /* Remove border from last item */
-  }
-
-  #menu a:hover {
-    background-color: #2563eb; /* Darker blue on hover */
-    color: #fbbf24; /* Yellow-500 */
-    transform: scale(1.05); /* Slightly enlarge on hover */
-  }
-
-  #menu-toggle {
-    z-index: 100; /* Ensure the toggle button is above other elements */
-  }
-
-  #menu-logo {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px 20px; /* Move the logo further down */
-  }
-
-  #menu-logo img {
-    width: 100px; /* Adjust the size as needed */
-    height: auto;
-  }
-
-  #menu-slogan {
-    text-align: center;
-    padding: 20px;
-    margin-top: auto; /* Move the slogan to the bottom */
-    color: white; /* White text color */
-    font-size: 0.9rem; /* Slightly smaller text */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
-  }
+#top-right-menu {
+  position: fixed; /* Fijo para asegurar su posición en pantalla */
+  top: 0; /* Anclado a la parte superior */
+  right: 0; /* Anclado al borde derecho */
+  z-index: 1000; /* Máximo para estar siempre por encima */
+  background-color: #047857; /* Verde oscuro */
+  border-radius: 0 0 0 40px;
+  padding: 10px;
+  width: 24rem;
+  height: 2.5rem;
+  text-align: right;
+  transition: background-color 0.3s ease;
 }
 
-/* Cambiar el fondo a color sólido */
-header.scrolled, #navbar.scrolled {
-  background-color: #1e3a8a;
+#top-right-menu.scrolled {
+  background-color: rgba(4, 120, 87, 0.8); /* Green-700 with opacity */
 }
 
-/* Estilo del menú al hacer scroll */
-#menu.scrolled {
-  background-color: #ffffff00;
+#top-right-menu ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#top-right-menu a, #menu a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#top-right-menu a:hover, #menu a:hover {
+  color: #fbbf24; /* Yellow-500 */
+  transform: scale(1.1);
+}
+
+/* Estilo general del submenú con forma de cuarto de círculo */
+#docentes-submenu {
+  position: absolute; /* Fijo para asegurar su posición en pantalla */
+  top: 1.9rem; /* Justo debajo del #top-right-menu */
+  left: 1rem; /* Anclado al borde izquierdo */
+  width: 370px;
+  height: 370px; /* Ajustar la altura para envolver los li */
+  background: linear-gradient(to bottom left, rgba(5, 98, 72, 0), rgba(5, 98, 72, 255)); /* Degradado transparente y oscurecimiento */
+  border-bottom-left-radius: 100%; /* Crea un cuarto de círculo */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  z-index: 499; /* Menor que los li */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#docentes-submenu.size-small {
+  width: 200px;
+  height: 200px;
+}
+
+#docentes-submenu.size-medium {
+  width: 300px;
+  height: 300px;
+}
+
+#docentes-submenu.size-large {
+  width: 370px;
+  height: 280px;
+}
+
+#docentes-submenu.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#docentes-submenu.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#docentes-submenu:not(.hidden) {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#docentes-submenu li {
+  list-style: none; /* Elimina los puntos de lista */
+  background-color: rgba(3, 114, 105, 0.729); /* Fondo blanco semitransparente */
+  border-radius: 50%; /* Forma circular */
+  width: 80px; /* Ancho reducido */
+  height: 80px; /* Alto reducido */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto; /* Centrado y con margen */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Efectos suaves */
+  z-index: 1001; /* Asegurar que esté sobre todo */
+  text-align: center; /* Centrar el texto */
+}
+
+#docentes-submenu li.position-top {
+  position: absolute;
+  top: 20px;
+  left: 13px;
+}
+
+#docentes-submenu li.position-middle {
+  position: absolute;
+  top: 125px;
+  left: 100px;
+}
+
+#docentes-submenu li.position-bottom {
+  position: absolute;
+  top: 185px;
+  left: 230px;
+}
+
+#docentes-submenu li:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Fondo más claro al pasar el mouse */
+  transform: scale(1.05); /* Ampliación ligera */
+  border-radius: 50%; /* Mantener la forma circular */
+}
+
+#docentes-submenu li a {
+  text-decoration: none; /* Sin subrayados */
+  color: white; /* Color del texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Alinea el texto al centro */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  font-size: 0.8rem; /* Tamaño de fuente reducido */
+  font-weight: bold; /* Texto en negrilla */
+  border-radius: 50%; /* Mantener la forma circular */
+  overflow: hidden; /* Asegurar que el texto no se desborde */
+  white-space: normal; /* Permitir que el texto se divida en varias líneas */
+  word-wrap: break-word; /* Permitir que el texto se divida en varias líneas */
+}
+
+#docentes-submenu a:hover {
+  background-color: transparent; /* Sin fondo al pasar el mouse */
+  color: #fbbf24; /* Texto amarillo */
 }
 
 /* Slider styles */
@@ -206,7 +288,7 @@ header.scrolled, #navbar.scrolled {
 }
 
 @keyframes slideAnimation {
-   0%, 40%, 100% { opacity: 0; transform: scale(1.1); }
+  0%, 40%, 100% { opacity: 0; transform: scale(1.1); }
   10%, 30% { opacity: 1; transform: scale(1); }
 }
 
@@ -215,82 +297,6 @@ header.scrolled, #navbar.scrolled {
   50% { transform: translateY(-5%); }
 }
 
-#top-right-menu {
-  background-color: #047857; /* Green-700 */
-  border-radius: 0 0 0 40px;
-  padding: 3px;
-  z-index: 60;
-  width: 24rem; /* 64px */
-  height: 2rem;
-  text-align: right;
-  transition: background-color 0.3s ease;
+#inicio {
+  z-index: -1; /* Ensure it is behind all other elements */
 }
-
-#top-right-menu.scrolled {
-  background-color: rgba(4, 120, 87, 0.8); /* Green-700 with opacity */
-}
-
-#top-right-menu ul {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-#top-right-menu a, #menu a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-#top-right-menu a:hover, #menu a:hover {
-  color: #fbbf24; /* Yellow-500 */
-  transform: scale(1.1);
-}
-
-#docentes-submenu {
-  display: flex;
-  flex-direction: column; /* Asegura disposición vertical */
-  padding: 8px 0; /* Espaciado interno */
-  background-color: #047857; /* Fondo verde */
-  border-radius: 6px; /* Bordes redondeados */
-  visibility: hidden; /* Oculto inicialmente */
-  opacity: 0; /* Transparente inicialmente */
-  transform: translateY(-10px); /* Ligeramente desplazado hacia arriba */
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 50; /* Asegura que esté por encima */
-  text-align: left; /* Alinea el texto a la izquierda */
-}
-
-#docentes-submenu.hidden {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-#docentes-submenu:not(.hidden) {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#docentes-submenu li {
-  display: block; /* Cada elemento ocupa una línea completa */
-  list-style: none; /* Elimina los puntos de lista */
-  margin: 0; /* Elimina márgenes extra */
-}
-
-#docentes-submenu a {
-  display: block; /* Hace que los enlaces llenen su contenedor */
-  padding: 10px 16px; /* Espaciado interno */
-  color: white; /* Texto blanco */
-  text-decoration: none; /* Elimina subrayados */
-  background-color: transparent; /* Fondo transparente por defecto */
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-align: left; /* Asegura que el texto esté alineado a la izquierda */
-}
-
-#docentes-submenu a:hover {
-  background-color: #065f46; /* Verde más oscuro al pasar el mouse */
-  color: #fbbf24; /* Texto amarillo */
-}
-

@@ -9,17 +9,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="font-sans text-gray-900">
-  <header id="header" class="fixed top-0 z-50 text-white w-full">
+  <header id="header" class="fixed top-0 text-white w-full">
     <!-- New Top Right Menu -->
-    <div id="top-right-menu" class="fixed top-0 right-0 z-60 bg-green-700 text-white rounded-bl-lg p-1 w-64">
+    <div id="top-right-menu" class="fixed top-0 right-0 bg-green-700 text-white rounded-bl-lg p-1 w-64">
       <ul class="flex space-x-3 pr-4 relative">
         <li class="relative">
           <a href="#" id="docentes-menu" class="text-sm hover:text-yellow-500 transition-all duration-200 cursor-pointer">Docentes</a>
           <!-- Submenú -->
-          <ul id="docentes-submenu" class="absolute left-0 mt-2 w-48 bg-green-700 rounded-lg shadow-lg hidden z-50">
-            <li><a href="https://login.lirmi.com/login" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-green-800">Lirmi</a></li>
-            <li><a href="https://www.umaximo.com/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-green-800">Umaximo</a></li>
-            <li><a href="#gestion-pedagogica" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 hover:bg-green-800">Gestión Pedagógica</a></li>
+          <ul id="docentes-submenu" class="absolute top-[2.5rem] left-0 size-large hidden">
+            <li class="position-top"><a href="https://login.lirmi.com/login" target="_blank" rel="noopener noreferrer">Lirmi</a></li>
+            <li class="position-middle"><a href="https://www.umaximo.com/" target="_blank" rel="noopener noreferrer">Umaximo</a></li>
+            <li class="position-bottom"><a href="#gestion-pedagogica" target="_blank" rel="noopener noreferrer">Gestión Pedagógica</a></li>
           </ul>
         </li>
         <li><a href="#apoderados" class="text-sm hover:text-yellow-500 transition-all duration-200">Apoderados</a></li>
@@ -83,26 +83,26 @@
   <main>
     <!-- Sección Hero -->
     <section id="inicio" class="h-screen relative overflow-hidden">
-        <div class="absolute inset-0 z-0">
-          <div class="slider">
-            <div class="slide">
-              <video autoplay muted loop class="w-full h-full object-cover">
-                <source src="img/Cc-Video-Hero-v8.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="slide"><img src="img/image2.jpg" alt="Slide 2"></div>
-            <div class="slide"><img src="img/image3.jpg" alt="Slide 3"></div>
+      <div class="absolute inset-0">
+        <div class="slider">
+          <div class="slide">
+            <video autoplay muted loop class="w-full h-full object-cover">
+              <source src="img/Cc-Video-Hero-v8.mp4" type="video/mp4">
+            </video>
           </div>
+          <div class="slide"><img src="img/image2.jpg" alt="Slide 2"></div>
+          <div class="slide"><img src="img/image3.jpg" alt="Slide 3"></div>
         </div>
-        <div class="absolute inset-0 bg-gradient-to-b from-blue-900 to-gray-800 opacity-75 z-10"></div>
-        <div class="relative z-20 flex flex-col items-center justify-center text-center text-white h-full px-4">
-          <h1 class="text-4xl md:text-5xl font-serif font-bold">Bienvenidos a TISA</h1>
-          <p class="mt-4 text-lg font-light italic">"El derecho de las personas a participar con igualdad de oportunidades"</p>
-          <a href="#contacto" class="inline-block mt-6 bg-yellow-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-yellow-600 transition-all transform hover:scale-110">
-            Conoce nuestro colegio
-          </a>
-        </div>
-      </section>      
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-blue-900 to-gray-800 opacity-75"></div>
+      <div class="relative flex flex-col items-center justify-center text-center text-white h-full px-4">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold">Bienvenidos a TISA</h1>
+        <p class="mt-4 text-lg font-light italic">"El derecho de las personas a participar con igualdad de oportunidades"</p>
+        <a href="#contacto" class="inline-block mt-6 bg-yellow-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-yellow-600 transition-all transform hover:scale-110">
+          Conoce nuestro colegio
+        </a>
+      </div>
+    </section>      
     <!-- Sección Nosotros -->
     <section id="nosotros" class="py-20 bg-blue-900 text-center text-white">
       <div class="container mx-auto">
