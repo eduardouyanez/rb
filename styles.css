@@ -461,3 +461,13 @@ header.scrolled {
   background: linear-gradient(to bottom, rgba(2, 12, 48, 0.9), rgba(1, 8, 32, 0.9)); /* Darker, elegant blue gradient */
   opacity: 0.85; /* Increase opacity */
 }
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('path/to/wavy-lines.svg') repeat-x; /* Asegúrate de que esta ruta sea correcta */
+  z-index: 1001; /* Asegurar que esté sobre los videos */
+}
