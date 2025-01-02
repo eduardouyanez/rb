@@ -8,6 +8,7 @@ const docentesSubmenu = document.getElementById('docentes-submenu');
 const apoderadosMenu = document.getElementById('apoderados-menu');
 const apoderadosSubmenu = document.getElementById('apoderados-submenu');
 const headerHeight = header.offsetHeight;
+const menuLogo = document.getElementById('menu-logo');
 
 // Cambiar fondo del header y menú al hacer scroll
 window.addEventListener('scroll', () => {
@@ -19,6 +20,12 @@ window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', scrolled);
     if (navbar) {
       navbar.classList.toggle('scrolled', scrolled);
+    }
+  } else {
+    if (scrolled) {
+      menuLogo.classList.add('scrolled');
+    } else {
+      menuLogo.classList.remove('scrolled');
     }
   }
   

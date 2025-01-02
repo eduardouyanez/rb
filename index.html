@@ -109,6 +109,11 @@
               <source src="img/video_3.mp4" type="video/mp4">
             </video>
           </div>
+          <div class="slide">
+            <video autoplay muted loop class="w-full h-full object-cover">
+              <source src="img/video_4.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
       <div class="absolute inset-0 bg-gradient-to-b from-blue-900 to-gray-800 opacity-75"></div>
@@ -176,5 +181,25 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.slide');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.display = i === index ? 'block' : 'none';
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      showSlide(currentSlide);
+      setInterval(nextSlide, 10000); // Change slide every 10 seconds
+    });
+  </script>
 </body>
 </html>
