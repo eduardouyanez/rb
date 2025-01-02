@@ -139,21 +139,23 @@ header.scrolled, #navbar.scrolled {
 #docentes-submenu {
   position: absolute; /* Fijo para asegurar su posición en pantalla */
   top: 1.9rem; /* Justo debajo del #top-right-menu */
-  left: 1rem; /* Anclado al borde izquierdo */
-  width: 370px;
-  height: 370px; /* Ajustar la altura para envolver los li */
-  background: linear-gradient(to bottom left, rgba(5, 98, 72, 0), rgba(5, 98, 72, 255)); /* Degradado transparente y oscurecimiento */
+  left: 3rem; /* Anclado al borde izquierdo */
+  width: 360px;
+  height: 340px; /* Ajustar la altura para envolver los li */
+  background: radial-gradient(circle at top right, rgba(5, 98, 72, 0) 20%, rgba(5, 98, 72, 1) 80%); /* Degradado transparente al comienzo y más oscuro al final */
   border-bottom-left-radius: 100%; /* Crea un cuarto de círculo */
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para la parte redondeada */
   z-index: 499; /* Menor que los li */
   padding: 10px;
   display: flex;
   flex-direction: column;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Efectos suaves */
+  box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.3), inset 5px 5px 15px rgba(255, 255, 255, 0.3); /* Efecto de esfera */
 }
 
 #docentes-submenu.size-small {
@@ -167,7 +169,7 @@ header.scrolled, #navbar.scrolled {
 }
 
 #docentes-submenu.size-large {
-  width: 370px;
+  width: 360px;
   height: 280px;
 }
 
@@ -191,41 +193,45 @@ header.scrolled, #navbar.scrolled {
 
 #docentes-submenu li {
   list-style: none; /* Elimina los puntos de lista */
-  background-color: rgba(3, 114, 105, 0.729); /* Fondo blanco semitransparente */
+  background-color: rgba(1, 105, 96, 0.758); /* Fondo blanco semitransparente */
   border-radius: 50%; /* Forma circular */
-  width: 80px; /* Ancho reducido */
-  height: 80px; /* Alto reducido */
+  width: 85px; /* Ancho ajustado */
+  height: 85px; /* Alto ajustado */
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px auto; /* Centrado y con margen */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Efectos suaves */
+  transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease; /* Efectos suaves */
   z-index: 1001; /* Asegurar que esté sobre todo */
   text-align: center; /* Centrar el texto */
+  box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.3), inset 5px 5px 15px rgba(255, 255, 255, 0.3); /* Efecto de esfera */
 }
 
 #docentes-submenu li.position-top {
   position: absolute;
   top: 20px;
-  left: 13px;
+  left: 8px;
 }
 
 #docentes-submenu li.position-middle {
   position: absolute;
-  top: 125px;
-  left: 100px;
+  top: 122px;
+  left: 90px;
 }
 
 #docentes-submenu li.position-bottom {
   position: absolute;
-  top: 185px;
-  left: 230px;
+  top: 179px;
+  left: 215px;
 }
 
 #docentes-submenu li:hover {
   background-color: rgba(255, 255, 255, 0.3); /* Fondo más claro al pasar el mouse */
   transform: scale(1.05); /* Ampliación ligera */
   border-radius: 50%; /* Mantener la forma circular */
+  width: 90px; /* Ancho aumentado al pasar el mouse */
+  height: 90px; /* Alto aumentado al pasar el mouse */
+  box-shadow: inset -7px -7px 20px rgba(0, 0, 0, 0.4), inset 7px 7px 20px rgba(255, 255, 255, 0.4); /* Efecto de esfera más pronunciado */
 }
 
 #docentes-submenu li a {
