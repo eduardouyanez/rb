@@ -18,11 +18,20 @@
           <!-- Submenú -->
           <ul id="docentes-submenu" class="absolute top-[2.5rem] left-0 size-large hidden">
             <li class="position-top"><a href="https://login.lirmi.com/login" target="_blank" rel="noopener noreferrer">Lirmi</a></li>
-            <li class="position-middle"><a href="https://www.umaximo.com/" target="_blank" rel="noopener noreferrer">Umaximo</a></li>
+            <li class="position-middle"><a href="https://www.umaximo.com/login" target="_blank" rel="noopener noreferrer">Umaximo</a></li>
             <li class="position-bottom"><a href="#gestion-pedagogica" target="_blank" rel="noopener noreferrer">Gestión Pedagógica</a></li>
           </ul>
         </li>
-        <li><a href="#apoderados" class="text-sm hover:text-yellow-500 transition-all duration-200">Apoderados</a></li>
+        <li class="relative">
+          <a href="#" id="apoderados-menu" class="text-sm hover:text-yellow-500 transition-all duration-200 cursor-pointer">Apoderados</a>
+          <!-- Submenú -->
+          <ul id="apoderados-submenu" class="absolute top-[2.5rem] left-5rem size-large hidden">
+            <li class="position-top"><a href="https://example.com/link1" target="_blank" rel="noopener noreferrer">Link 1</a></li>
+            <li class="position-middle"><a href="https://example.com/link2" target="_blank" rel="noopener noreferrer">Link 2</a></li>
+            <li class="position-bottom"><a href="https://example.com/link3" target="_blank" rel="noopener noreferrer">Link 3</a></li>
+          </ul>
+        </li>
+
         <li><a href="tel:+56582565606" class="hover:text-yellow-500 transition-all duration-200">
           <i class="fas fa-phone"></i>
         </a></li>
@@ -87,11 +96,19 @@
         <div class="slider">
           <div class="slide">
             <video autoplay muted loop class="w-full h-full object-cover">
-              <source src="img/Cc-Video-Hero-v8.mp4" type="video/mp4">
+              <source src="img/video_1.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="slide"><img src="img/image2.jpg" alt="Slide 2"></div>
-          <div class="slide"><img src="img/image3.jpg" alt="Slide 3"></div>
+          <div class="slide">
+            <video autoplay muted loop class="w-full h-full object-cover">
+              <source src="img/video_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="slide">
+            <video autoplay muted loop class="w-full h-full object-cover">
+              <source src="img/video_3.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
       <div class="absolute inset-0 bg-gradient-to-b from-blue-900 to-gray-800 opacity-75"></div>

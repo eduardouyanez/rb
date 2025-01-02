@@ -14,8 +14,14 @@ header, #menu {
   transition: background-color 0.3s ease;
 }
 
-header.scrolled, #navbar.scrolled {
-  background-color: #1e3a8a;
+header.scrolled {
+  background: linear-gradient(to bottom, rgba(2, 26, 92, 0.8), rgba(8, 1, 75, 0.8)); /* Lighter blue gradient */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Darker and more defined shadow */
+}
+
+#navbar.scrolled {
+  background: linear-gradient(to bottom, rgba(2, 26, 92, 0.8), rgba(8, 1, 75, 0.8)); /* Lighter blue gradient */
+  box-shadow: none; /* Remove shadow */
 }
 
 #menu.scrolled {
@@ -65,7 +71,7 @@ header.scrolled, #navbar.scrolled {
   }
 
   #menu-toggle {
-    z-index: 100; /* Ensure the toggle button is above other elements */
+    z-index: 1002; /* Ensure the toggle button is above the submenu and its elements */
     background-color: #2563eb; /* Blue background */
     border: none; /* Remove default border */
     border-radius: 50%; /* Make it circular */
@@ -97,6 +103,21 @@ header.scrolled, #navbar.scrolled {
     font-size: 0.9rem; /* Slightly smaller text */
     border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
     text-shadow: 2px 2px 4px rgba(30, 58, 138, 0.8); /* More pronounced dark blue shadow */
+  }
+
+  #navbar {
+    background-color: transparent !important; /* Always transparent on mobile */
+    box-shadow: none !important; /* Remove shadow on mobile */
+  }
+
+  header {
+    background-color: transparent !important; /* Always transparent on mobile */
+    box-shadow: none !important; /* Remove shadow on mobile */
+  }
+
+  header.scrolled, #navbar.scrolled {
+    background-color: transparent !important; /* Do not change on scroll */
+    box-shadow: none !important; /* Remove shadow on scroll */
   }
 }
 
@@ -139,7 +160,7 @@ header.scrolled, #navbar.scrolled {
 #docentes-submenu {
   position: absolute; /* Fijo para asegurar su posición en pantalla */
   top: 1.9rem; /* Justo debajo del #top-right-menu */
-  left: 3rem; /* Anclado al borde izquierdo */
+  left: 1.5rem; /* Anclado al borde izquierdo */
   width: 360px;
   height: 340px; /* Ajustar la altura para envolver los li */
   background: radial-gradient(circle at top right, rgba(5, 98, 72, 0) 20%, rgba(5, 98, 72, 1) 80%); /* Degradado transparente al comienzo y más oscuro al final */
@@ -193,7 +214,7 @@ header.scrolled, #navbar.scrolled {
 
 #docentes-submenu li {
   list-style: none; /* Elimina los puntos de lista */
-  background-color: rgba(1, 105, 96, 0.758); /* Fondo blanco semitransparente */
+  background-color: rgba(1, 105, 96, 0.851); /* Fondo blanco semitransparente */
   border-radius: 50%; /* Forma circular */
   width: 85px; /* Ancho ajustado */
   height: 85px; /* Alto ajustado */
@@ -226,7 +247,7 @@ header.scrolled, #navbar.scrolled {
 }
 
 #docentes-submenu li:hover {
-  background-color: rgba(255, 255, 255, 0.3); /* Fondo más claro al pasar el mouse */
+  background-color: rgba(255, 255, 255, 0.583); /* Fondo más claro al pasar el mouse */
   transform: scale(1.05); /* Ampliación ligera */
   border-radius: 50%; /* Mantener la forma circular */
   width: 90px; /* Ancho aumentado al pasar el mouse */
@@ -254,6 +275,127 @@ header.scrolled, #navbar.scrolled {
 #docentes-submenu a:hover {
   background-color: transparent; /* Sin fondo al pasar el mouse */
   color: #fbbf24; /* Texto amarillo */
+}
+
+/* Estilo general del submenú con forma de cuarto de círculo */
+#apoderados-submenu {
+  position: absolute;
+  top: 1.9rem;
+  left: 1rem; /* Different left position */
+  width: 360px;
+  height: 340px;
+  background: radial-gradient(circle at top right, rgba(5, 98, 72, 0) 20%, rgba(5, 98, 72, 1) 80%);
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 499;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.3), inset 5px 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+#apoderados-submenu.size-small {
+  width: 200px;
+  height: 200px;
+}
+
+#apoderados-submenu.size-medium {
+  width: 300px;
+  height: 300px;
+}
+
+#apoderados-submenu.size-large {
+  width: 360px;
+  height: 280px;
+}
+
+#apoderados-submenu.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#apoderados-submenu.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+#apoderados-submenu:not(.hidden) {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#apoderados-submenu li {
+  list-style: none;
+  background-color: rgba(1, 105, 96, 0.851);
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1001;
+  text-align: center;
+  box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.3), inset 5px 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+#apoderados-submenu li.position-top {
+  position: absolute;
+  top: 20px;
+  left: 8px;
+}
+
+#apoderados-submenu li.position-middle {
+  position: absolute;
+  top: 122px;
+  left: 90px;
+}
+
+#apoderados-submenu li.position-bottom {
+  position: absolute;
+  top: 179px;
+  left: 215px;
+}
+
+#apoderados-submenu li:hover {
+  background-color: rgba(255, 255, 255, 0.583);
+  transform: scale(1.05);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  box-shadow: inset -7px -7px 20px rgba(0, 0, 0, 0.4), inset 7px 7px 20px rgba(255, 255, 255, 0.4);
+}
+
+#apoderados-submenu li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  overflow: hidden;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+#apoderados-submenu a:hover {
+  background-color: transparent;
+  color: #fbbf24;
 }
 
 /* Slider styles */
@@ -305,4 +447,17 @@ header.scrolled, #navbar.scrolled {
 
 #inicio {
   z-index: -1; /* Ensure it is behind all other elements */
+}
+
+#navbar {
+  /* ...existing code... */
+  margin-top: 10px;
+  padding-top: 40px; /* Move the navbar 5px further down */
+  padding-bottom: 20px;
+  /* ...existing code... */
+}
+
+#inicio .bg-gradient-to-b {
+  background: linear-gradient(to bottom, rgba(2, 12, 48, 0.9), rgba(1, 8, 32, 0.9)); /* Darker, elegant blue gradient */
+  opacity: 0.85; /* Increase opacity */
 }
